@@ -31,7 +31,7 @@ Content-Type: application/json
 
 
 ### Delete an item by ID
-DELETE http://localhost:3000/users/66f73fc04b3eb17b2a6699fc
+DELETE http://localhost:3000/users/66f742b14b3eb17b2a6699fd
 Content-Type: application/json
 
 {
