@@ -8,7 +8,6 @@
   "host": "https://web-services-1-k65k.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
