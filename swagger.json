@@ -5,9 +5,10 @@
     "description": "Users API",
     "version": "1.0.0"
   },
-  "host": "https://web-services-1-k65k.onrender.com",
+  "host": "https://web-services-1-k65k.onrender.com/api-docs/",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -58,19 +59,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
                 "email": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "username": {
                   "example": "any"
                 },
-                "birthday": {
+                "name": {
+                  "example": "any"
+                },
+                "ipaddress": {
                   "example": "any"
                 }
               }
@@ -128,10 +126,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "email": {
                   "example": "any"
                 },
-                "lastName": {
+                "username": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "ipaddress": {
                   "example": "any"
                 }
               }

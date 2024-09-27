@@ -20,47 +20,46 @@ const getSingle = async (req, res) => {
     });
 };
 
-const createUser = async (rep, res) => {
+const createUser = async (req, res) => {
     //#swagger.tags=['Users']
     const user = {
-        firstName: rep.body.firstName,
-        lastName: rep.body.lastName,
-        email: rep.body.email,
-        favoriteColor: rep.body.favoriteColor,
-        birthday: rep.body.birthday,
+        email: req.body.email,
+        username: req.body.username,
+        name: req.body.name,
+        ipaddress: req.body.ipaddress
     };
 
-    const response = await mongodb.getDatabase().db().collection('users').replaceOne(user)
-    if (response,acknowledged) {
+    const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
+    if (response.acknowledged) {
         res.status(204).send();
-    }else{
+    } else{
         res.status(500).json(response.error || 'Some error occured while updating user')  
     }
 };
 
-const updateUser = async (rep, res) => {
+const updateUser = async (req, res) => {
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
     const user = {
-        firstName: rep.body.firstName,
-        lastName: rep.body.lastName,
+        email: req.body.email,
+        username: req.body.username,
         name: req.body.name,
         ipaddress: req.body.ipaddress
     };
 
     const response = await mongodb.getDatabase().db().collection('users').replaceOne({ _id: userId }, user)
-    if (response,modifiedCount > 0) {
+    if (response.modifiedCount > 0) {
         res.status(204).send();
     }else{
         res.status(500).json(response.error || 'Some error occured while updating user')  
     }
 };
 
-const deleteUser = async (rep, res) => {
+const deleteUser = async (req, res) => {
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db().collection('users').deleteOne({ _id: userId })
-    if (response,deletedCount > 0) {
+    if (response.deletedCount > 0) {
         res.status(204).send();
     }else{
         res.status(500).json(response.error || 'Some error occured while updating user')  

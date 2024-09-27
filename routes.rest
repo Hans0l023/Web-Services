@@ -1,0 +1,42 @@
+//Local Host
+
+### Get all Users
+GET http://localhost:3000/users
+
+### Get Users by ID
+GET http://localhost:3000/users/66eccaf19bfc2a5ca31b5206
+
+
+### Create User
+POST http://localhost:3000/users 
+Content-Type: application/json
+
+{  
+"email": "tester.tester.com",
+"username": "tester.tester.com",
+"name": "user5",
+"ipaddress": "73.183.91.112/32"
+}
+
+### put User
+PUT http://localhost:3000/users/66eccaf19bfc2a5ca31b5206 
+Content-Type: application/json
+
+{
+"email": "TESTER.test.com",
+"username": "TESTER.test.com",
+"name": "user4",
+"ipaddress": "73.183.91.112/32"
+}
+
+
+### Delete an item by ID
+DELETE http://localhost:3000/users/66f73fc04b3eb17b2a6699fc
+Content-Type: application/json
+
+{
+"email": "tester.tester.com",
+"username": "tester.tester.com",
+"name": "user5",
+"ipaddress": "73.183.91.112/32"
+}
