@@ -5,9 +5,10 @@
     "description": "Users API",
     "version": "1.0.0"
   },
-  "host": "//#swagger.tags=['Users']",
+  "host": "https://web-services-1-k65k.onrender.com",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
